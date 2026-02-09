@@ -27,7 +27,18 @@ video {
 }
 
 .videos li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   list-style: none;
+}
+
+li p {
+  margin: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 600px) {

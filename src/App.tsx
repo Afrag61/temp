@@ -1,21 +1,27 @@
-import data from "./data.json";
+import data from './data.json';
 
 function App() {
+  return (
+    <div className='videos'>
+      {data.map((vid, index) => {
+        const name = vid.split('/')[3];
 
-    return (
-        <div className="videos">
-            {data.map((vid, index) => {
-                return (
-                    <li key={index}>
-                        <video controls muted controlsList="nodownload noplaybackrate" disablePictureInPicture onContextMenu={(e) => e.preventDefault()} >
-                            <source
-                                src={vid}
-                                type="video/mp4" />
-                        </video>
-                    </li>
-                );
-            })}
-        </div>
-    );
+        return (
+          <li key={index}>
+            <video
+              controls
+              muted
+              controlsList='nodownload noplaybackrate'
+              disablePictureInPicture
+              onContextMenu={(e) => e.preventDefault()}
+            >
+              <source src={vid} type='video/mp4' />
+            </video>
+            <p>{name}</p>
+          </li>
+        );
+      })}
+    </div>
+  );
 }
 export default App;
