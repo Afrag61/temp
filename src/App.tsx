@@ -1,20 +1,21 @@
-import data from './data.json';
+import data from "./data.json";
 
 function App() {
-  console.log('data', data);
 
-  return (
-    <div className='videos'>
-      {data.map((vid, index) => {
-        return (
-          <li key={index}>
-            <video controls muted>
-              <source src={vid} type='video/mp4' />
-            </video>
-          </li>
-        );
-      })}
-    </div>
-  );
+    return (
+        <div className="videos">
+            {data.map((vid, index) => {
+                return (
+                    <li key={index}>
+                        <video controls muted controlsList="nodownload noplaybackrate" disablePictureInPicture onContextMenu={(e) => e.preventDefault()} >
+                            <source
+                                src={vid}
+                                type="video/mp4" />
+                        </video>
+                    </li>
+                );
+            })}
+        </div>
+    );
 }
 export default App;
