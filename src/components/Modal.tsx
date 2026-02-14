@@ -8,7 +8,7 @@ const Modal = () => {
   useGSAP(() => {
     gsap.from('.modal', {
       opacity: 0,
-      y: -1000,
+      y: -100,
       duration: 0.5,
       ease: 'power1.inOut',
     });
@@ -31,12 +31,12 @@ const Modal = () => {
               <source src={video.src} />
             </video>
             <div>
-              <button
+              {/* <button
                 className='absolute top-3 right-3 cursor-pointer w-10 h-10 text-center bg-[#ff47ac] rounded-full hover:bg-red-600 transition-all duration-300 ease-in-out font-sans font-bold'
                 onClick={closeModal}
               >
                 X
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
