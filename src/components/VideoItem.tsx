@@ -16,7 +16,7 @@ const VideoItem: React.FC<Props> = ({ video }) => {
     <li
       key={video.name}
       onClick={handleClick}
-      className='flex flex-col items-center p-2.5 hover:scale-105 hover:border cursor-pointer border-[#ff47ac] rounded-md transition-all duration-300 ease-in-out object-center'
+      className='flex flex-col p-2.5 hover:scale-105 hover:border cursor-pointer border-[#ff47ac] rounded-md transition-all duration-300 ease-in-out object-center'
     >
       <div className='aspect-video overflow-hidden rounded-xl bg-black'>
         <img
