@@ -1,31 +1,27 @@
-import Header from "./components/Header";
-import data from "./data.json";
+import Header from './components/Header';
+
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import VideoList from './components/VideoList';
+import { useEffect } from 'react';
+import Modal from './components/Modal';
+import { useModalContext } from './store/useModalCtx';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-    return (
-        <>
-            <Header />
-            <div className="videos">
-                {data.map((vid, index) => {
-                    const name = vid.split("/")[3];
+  const { isOpen } = useModalContext();
 
-                    return (
-                        <li key={index}>
-                            <video
-                                controls
-                                muted
-                                controlsList="nodownload noplaybackrate"
-                                disablePictureInPicture
-                                onContextMenu={e => e.preventDefault()}
-                            >
-                                <source src={vid} type="video/mp4" />
-                            </video>
-                            <p>{name}</p>
-                        </li>
-                    );
-                })}
-            </div>
-        </>
-    );
+  useEffect(() => {
+    document.body.classList = 'transition-all duration-300 ease-in-out';
+  }, []);
+
+  return (
+    <>
+      {isOpen && <Modal />}
+      <Header />
+      <VideoList />
+    </>
+  );
 }
 export default App;
