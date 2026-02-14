@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { TModalContext, TVideo } from '../types';
+import type { TModalContext } from '../types';
 import { ModalContext } from './useModalCtx';
 
 interface Props {
@@ -8,21 +8,21 @@ interface Props {
 
 const ModalContextProvider: React.FC<Props> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [video, setVideo] = useState<TVideo | null>(null);
+  const [media, setMedia] = useState<TModalContext['media'] | null>(null);
 
-  const handleOpenModal: TModalContext['openModal'] = (video) => {
+  const handleOpenModal: TModalContext['openModal'] = (media) => {
     setIsOpen(true);
-    setVideo(video);
+    setMedia(media);
   };
 
   const handleCloseModal: TModalContext['closeModal'] = () => {
-    setVideo(null);
+    setMedia(null);
     setIsOpen(false);
   };
 
   const ctxValue: TModalContext = {
     isOpen,
-    video,
+    media,
     openModal: handleOpenModal,
     closeModal: handleCloseModal,
   };

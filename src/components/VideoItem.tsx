@@ -9,7 +9,7 @@ const VideoItem: React.FC<Props> = ({ video }) => {
   const { openModal } = useModalContext();
 
   const handleClick = () => {
-    openModal(video);
+    openModal({ type: 'video', video });
   };
 
   return (

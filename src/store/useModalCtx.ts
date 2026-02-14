@@ -3,7 +3,7 @@ import type { TModalContext } from '../types';
 
 export const ModalContext = createContext<TModalContext>({
   openModal: () => {},
-  video: null,
+  media: null,
   isOpen: false,
   closeModal: () => {},
 });

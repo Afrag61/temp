@@ -4,9 +4,26 @@ export interface TVideo {
   name: string;
 }
 
+export interface TImage {
+  src: string;
+  name: string;
+}
+
+interface TMediaVideo {
+  type: 'video';
+  video: TVideo;
+}
+
+interface TMediaImage {
+  type: 'image';
+  image: TImage;
+}
+
+export type TMedia = TMediaVideo | TMediaImage;
+
 export interface TModalContext {
   isOpen: boolean;
-  video: TVideo | null;
-  openModal: (video: TVideo) => void;
+  media: TMedia | null;
+  openModal: (media: TMedia) => void;
   closeModal: () => void;
 }
