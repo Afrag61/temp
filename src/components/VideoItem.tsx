@@ -23,9 +23,7 @@ const VideoItem: React.FC<Props> = ({ video }) => {
       .timeline({
         scrollTrigger: {
           trigger: vidItemRef.current,
-          start: 'top 85%',
-          end: 'bottom 99%',
-          scrub: true,
+          start: 'top 100%',
         },
       })
       .fromTo(
